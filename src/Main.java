@@ -12,7 +12,7 @@ public class Main {
         Whoop whoop = new Whoop ("возгласы");
         Road road = new Road ("дорога");
         they.rush(marge);
-        whoop.addStatus(Status.приветственные);
+        whoop.addStatus(Status.WELCOMING);
         winnieThePooh.publish(road, whoop);
 
         //Не успел Винни-Пух спросить: "Почему по четвергам?"-- как Кристофер Робин начал рассказывать грустную историю пропавшего дома Иа.
@@ -21,12 +21,12 @@ public class Main {
         winnieThePooh.ask(question, DaysOfTheWeek.THURSDAY);
         Tell tell = new Tell("рассказывать");
         Story story = new Story ("историю");
-        story.addStatus(Status.грустную);
+        story.addStatus(Status.SAD);
         tell.addAddition(story);
         christopherRobin.setLocation(marge);
         IA iA = new IA("Иа", true);
         House house = new House("дома", iA);
-        house.addStatus(Status.пропавшего);
+        house.addStatus(Status.MISSING);
         story.setStoryThing(house);
         christopherRobin.StartTell(tell , story);
         // Пух и Пятачок слушали, и глаза у них становились все больше и больше.

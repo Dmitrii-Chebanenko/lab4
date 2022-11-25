@@ -3,8 +3,8 @@ public class Eyes extends Thing implements ICanExpand{
         super(name);
     }
     public void expand(){
-        this.addStatus(Status.расширялись);
-        System.out.println(getName() + " " + Status.расширялись);
+        this.addStatus(Status.EXPANDED);
+        System.out.println(getName() + " " + Status.getStatus(Status.EXPANDED));
     }
 
 }

@@ -14,9 +14,13 @@ public abstract class Thing  implements IPartOfStory, ICanBeUsedByActions{
     }
 
     public String getStatusToString(){
-        String temp = this.getStatus().toString();
-        temp = temp.substring(1, temp.length() - 1);
-        return temp;
+        String ans = "";
+        for (Status s : this.status){
+            ans += Status.getStatus(s);
+            ans+=", ";
+        }
+        ans = ans.substring(0, ans.length()-2);
+        return ans;
     }
 
     public void addStatus(Status status){
