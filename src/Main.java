@@ -1,3 +1,15 @@
+import entity.*;
+import enums.DaysOfTheWeek;
+import enums.QuestionWord;
+import enums.Status;
+import places.Marge;
+import places.Road;
+import thing.Eyes;
+import thing.House;
+import thing.Story;
+import thing.Whoop;
+import verb.Tell;
+
 //Они помчались по опушке вокруг рощи, и всю дорогу Пух издавал приветственные возгласы.
 // Не успел Винни-Пух спросить: "Почему по четвергам?"-- как Кристофер Робин начал рассказывать грустную историю пропавшего дома Иа.
 // Пух и Пятачок слушали, и глаза у них становились все больше и больше.
