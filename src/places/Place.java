@@ -1,12 +1,16 @@
 package places;
 
+import enums.Status;
 import intefaces.ICanBeUsedByActions;
 import intefaces.IPartOfStory;
 
+import java.util.HashSet;
 import java.util.Objects;
 
 public abstract class Place implements IPartOfStory, ICanBeUsedByActions {
     private String name;
+
+    private HashSet<Status> status = new HashSet<>();
 
     public Place() {
         name = "-";
@@ -14,6 +18,20 @@ public abstract class Place implements IPartOfStory, ICanBeUsedByActions {
 
     public Place(String name) {
         this.name = name;
+    }
+
+    public void addStatus(Status status){
+        this.status.add(status);
+    }
+
+    public String getStatusToString(){
+        String ans = "";
+        for (Status s : this.status){
+            ans += Status.getStatus(s);
+            ans+=", ";
+        }
+        ans = ans.substring(0, ans.length()-2);
+        return ans;
     }
 
     public String getName() {

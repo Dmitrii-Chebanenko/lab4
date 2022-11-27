@@ -1,8 +1,8 @@
-package thing;
+package places;
 
 import entity.Entity;
 
-public class House extends Thing {
+public class House extends Place {
     private Entity owner;
     public House(String name, Entity owner) {
         super(name);

@@ -5,7 +5,7 @@ import enums.Status;
 import places.Marge;
 import places.Road;
 import thing.Eyes;
-import thing.House;
+import places.House;
 import thing.Story;
 import thing.Whoop;
 import verb.Tell;
