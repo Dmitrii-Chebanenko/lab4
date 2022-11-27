@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Objects;
 
 public abstract class Entity implements IPartOfStory, ICanBeUsedByActions {
@@ -6,8 +6,8 @@ public abstract class Entity implements IPartOfStory, ICanBeUsedByActions {
     private Place location;
 
     private boolean isHeOwner = false;
-    private ArrayList<Status> status = new ArrayList<Status>();
-    private ArrayList<Thing> partOfEntities = new ArrayList<Thing>();
+    private HashSet<Status> status = new HashSet<>();
+    private HashSet<Thing> partOfEntities = new HashSet<>();
 
     public Entity(){
         name = "неизвестно";

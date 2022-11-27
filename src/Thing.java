@@ -1,10 +1,10 @@
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Objects;
 
 public abstract class Thing  implements IPartOfStory, ICanBeUsedByActions{
     private String name;
 
-    private ArrayList<Status> status = new ArrayList<Status>();
+    private HashSet<Status> status = new HashSet<>();
 
     public Thing() {
         name = "нет имени";
@@ -36,7 +36,7 @@ public abstract class Thing  implements IPartOfStory, ICanBeUsedByActions{
         return name;
     }
 
-    public ArrayList<Status> getStatus() {
+    public HashSet<Status> getStatus() {
         return status;
     }
 
