@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public abstract class Thing  implements IPartOfStory, ICanBeUsedByActions{
     private String name;
@@ -37,6 +38,19 @@ public abstract class Thing  implements IPartOfStory, ICanBeUsedByActions{
 
     public ArrayList<Status> getStatus() {
         return status;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Thing thing = (Thing) o;
+        return Objects.equals(name, thing.name) && Objects.equals(status, thing.status);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, status);
     }
 
     @Override

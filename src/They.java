@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class They extends Entity implements ICanRush{
     private ArrayList<Entity> people = new ArrayList<>();
@@ -21,6 +22,20 @@ public class They extends Entity implements ICanRush{
         for (Entity sub : people)
             sub.setLocation(place);
         System.out.println(this.getName() + " помчались по " + this.getLocation().getName());//Вокруг рощи
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        They they = (They) o;
+        return Objects.equals(people, they.people);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), people);
     }
 
     @Override

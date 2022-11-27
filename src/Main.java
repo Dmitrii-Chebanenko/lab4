@@ -26,7 +26,7 @@ public class Main {
         House house = new House("дома", iA);
         house.addStatus(Status.MISSING);
         story.setStoryThing(house);
-        christopherRobin.StartTell(tell , story);
+        christopherRobin.StartDoSomeThing(tell , story);
         // Пух и Пятачок слушали, и глаза у них становились все больше и больше.
         winnieThePooh.setName("Пух");
         winnieThePooh.hear(piglet, story);

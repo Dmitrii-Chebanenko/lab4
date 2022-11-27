@@ -4,6 +4,8 @@ import java.util.Objects;
 public abstract class Verb implements ICanBeUsedByActions {
     private String name;
 
+    public abstract String doSth(ICanBeUsedByActions obj);
+
     private ArrayList<Thing> addition= new ArrayList<Thing>();
 
     public Verb() {

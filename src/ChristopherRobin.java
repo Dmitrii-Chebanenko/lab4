@@ -1,4 +1,4 @@
-public class ChristopherRobin extends Entity implements ICanStatTell {
+public class ChristopherRobin extends Entity implements ICanStartDoSomething {
     public ChristopherRobin(String name) {
         super(name);
     }
@@ -7,7 +7,7 @@ public class ChristopherRobin extends Entity implements ICanStatTell {
         super(name, location);
     }
 
-    public void StartTell(Tell obj, ICanBeUsedByActions thing) {
-        System.out.println(this.getName() + " начал " + obj.tellSth(thing));
+    public void StartDoSomeThing(Verb obj, ICanBeUsedByActions thing) {
+        System.out.println(this.getName() + " начал " + obj.doSth(thing));
     }
 }

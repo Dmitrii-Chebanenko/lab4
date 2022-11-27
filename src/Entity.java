@@ -66,14 +66,17 @@ public abstract class Entity implements IPartOfStory, ICanBeUsedByActions {
     }
 
     @Override
-    public int hashCode(){
-        return Objects.hash(name, location);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Entity entity = (Entity) o;
+        return isHeOwner == entity.isHeOwner && Objects.equals(name, entity.name) && Objects.equals(location, entity.location) && Objects.equals(status, entity.status) && Objects.equals(partOfEntities, entity.partOfEntities);
     }
 
-        /*@Override
-        public boolean equals(Object otherObg){
-
-        }*/
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, location, isHeOwner, status, partOfEntities);
+    }
 
     @Override
     public String toString() {

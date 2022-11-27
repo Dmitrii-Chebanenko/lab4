@@ -5,7 +5,7 @@ public class Tell extends Verb {
         super(name);
     }
 
-    public String tellSth(ICanBeUsedByActions obj) {
+    public String doSth(ICanBeUsedByActions obj) {
         return this.getName() + " " + obj.toString();
     }
 
