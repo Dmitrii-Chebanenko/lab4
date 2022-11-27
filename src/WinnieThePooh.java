@@ -15,8 +15,8 @@ public class WinnieThePooh extends Entity implements ICanPublish, ICanAsk, ICanH
         System.out.println(Prepositions.всю + " " + place.getName() + " " + this.getName() + " издал " + obj.toString());
     }
 
-    public void ask(Question q, DaysOfTheWeek when) {
-        System.out.println(this.getName() + " спросил: \"" + q.getName() + " по " + DaysOfTheWeek.whatDay(when) + "?\"");
+    public void ask(QuestionWord q, DaysOfTheWeek when) {
+        System.out.println(this.getName() + " спросил: \"" + QuestionWord.getQuestionWord(q) + " по " + DaysOfTheWeek.whatDay(when) + "?\"");
     }
 
     public void hear(ICanBeUsedByActions obj) {

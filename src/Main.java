@@ -17,13 +17,11 @@ public class Main {
 
         //Не успел Винни-Пух спросить: "Почему по четвергам?"-- как Кристофер Робин начал рассказывать грустную историю пропавшего дома Иа.
         winnieThePooh.setName("Винни-Пух");
-        Question question = new Question("Почему");
-        winnieThePooh.ask(question, DaysOfTheWeek.THURSDAY);
+        winnieThePooh.ask(QuestionWord.WHY, DaysOfTheWeek.THURSDAY);
         Tell tell = new Tell("рассказывать");
         Story story = new Story ("историю");
         story.addStatus(Status.SAD);
         tell.addAddition(story);
-        christopherRobin.setLocation(marge);
         IA iA = new IA("Иа", true);
         House house = new House("дома", iA);
         house.addStatus(Status.MISSING);
