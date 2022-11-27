@@ -1,8 +1,11 @@
 package entity;
 
+import enums.Status;
 import intefaces.ICanBeUsedByActions;
+import intefaces.ICanExpand;
 import intefaces.ICanStartDoSomething;
 import places.Place;
+import thing.Thing;
 import verb.Verb;
 
 public class ChristopherRobin extends Entity implements ICanStartDoSomething {

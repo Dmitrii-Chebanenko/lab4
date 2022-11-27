@@ -4,9 +4,9 @@ import enums.QuestionWord;
 import enums.Status;
 import places.Marge;
 import places.Road;
-import thing.Eyes;
 import places.House;
 import thing.Story;
+import thing.Thing;
 import thing.Whoop;
 import verb.Tell;
 
@@ -41,12 +41,7 @@ public class Main {
         christopherRobin.StartDoSomeThing(tell , story);
         // Пух и Пятачок слушали, и глаза у них становились все больше и больше.
         winnieThePooh.setName("Пух");
-        winnieThePooh.hear(piglet, story);
-        Eyes winnieEyes = new Eyes("глаза Винни-Пуха");
-        Eyes pigletEyes = new Eyes("глаза Пяточка");
-        winnieThePooh.addPartOfEntities(winnieEyes);
-        piglet.addPartOfEntities(pigletEyes);
-        winnieEyes.expand();
-        pigletEyes.expand();
+        winnieThePooh.hear(story);
+        piglet.hear(story);
     }
 }
