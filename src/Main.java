@@ -1,3 +1,15 @@
+import entity.*;
+import enums.DaysOfTheWeek;
+import enums.QuestionWord;
+import enums.Status;
+import places.Marge;
+import places.Road;
+import places.House;
+import thing.Story;
+import thing.Thing;
+import thing.Whoop;
+import verb.Tell;
+
 //Они помчались по опушке вокруг рощи, и всю дорогу Пух издавал приветственные возгласы.
 // Не успел Винни-Пух спросить: "Почему по четвергам?"-- как Кристофер Робин начал рассказывать грустную историю пропавшего дома Иа.
 // Пух и Пятачок слушали, и глаза у них становились все больше и больше.
@@ -26,15 +38,10 @@ public class Main {
         House house = new House("дома", iA);
         house.addStatus(Status.MISSING);
         story.setStoryThing(house);
-        christopherRobin.StartTell(tell , story);
+        christopherRobin.StartDoSomeThing(tell , story);
         // Пух и Пятачок слушали, и глаза у них становились все больше и больше.
         winnieThePooh.setName("Пух");
-        winnieThePooh.hear(piglet, story);
-        Eyes winnieEyes = new Eyes("глаза Винни-Пуха");
-        Eyes pigletEyes = new Eyes("глаза Пяточка");
-        winnieThePooh.addPartOfEntities(winnieEyes);
-        piglet.addPartOfEntities(pigletEyes);
-        winnieEyes.expand();
-        pigletEyes.expand();
+        winnieThePooh.hear(story);
+        piglet.hear(story);
     }
 }
