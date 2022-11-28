@@ -1,6 +1,5 @@
 package entity;
 
-import entity.Entity;
 import enums.DaysOfTheWeek;
 import enums.Prepositions;
 import enums.QuestionWord;
@@ -10,7 +9,7 @@ import places.Place;
 import thing.Story;
 import thing.Thing;
 
-public class WinnieThePooh extends Entity implements ICanPublish, ICanAsk, ICanHear {
+public class WinnieThePooh extends Entity implements CanPublish, CanAsk, CanHear {
 
     private Eyes eyes = new Eyes("глаза Винни-Пуха");
 
@@ -22,7 +21,7 @@ public class WinnieThePooh extends Entity implements ICanPublish, ICanAsk, ICanH
         super(name, location);
     }
 
-    public void publish(Place place, ICanBeUsedByActions obj) {
+    public void publish(Place place, CanBeUsedByActions obj) {
         System.out.println(Prepositions.всю + " " + place.getName() + " " + this.getName() + " издал " + obj.toString());
     }
 
@@ -30,18 +29,18 @@ public class WinnieThePooh extends Entity implements ICanPublish, ICanAsk, ICanH
         System.out.println(this.getName() + " спросил: \"" + QuestionWord.getQuestionWord(q) + " по " + DaysOfTheWeek.whatDay(when) + "?\"");
     }
 
-    public void hear(ICanBeUsedByActions obj) {
+    public void hear(CanBeUsedByActions obj) {
         Story story = new Story ("историю");
         story.addStatus(Status.SAD);
         System.out.println(this.getName() + " слушает " + obj.toString());
         eyes.expand();
     }
 
-    public void hear(Entity sub, ICanBeUsedByActions obj) {
+    public void hear(Entity sub, CanBeUsedByActions obj) {
         System.out.println(this.getName() + " и " + sub.getName() + " слушают " + obj.toString());
     }
 
-    private class Eyes extends Thing implements ICanExpand {
+    private class Eyes extends Thing implements CanExpand {
         public Eyes(String name) {
             super(name);
         }
@@ -51,5 +50,4 @@ public class WinnieThePooh extends Entity implements ICanPublish, ICanAsk, ICanH
             System.out.println(getName() + " " + Status.getStatus(Status.EXPANDED));
         }
     }
-
 }

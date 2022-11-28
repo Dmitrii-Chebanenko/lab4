@@ -1,6 +1,6 @@
 package verb;
 
-import intefaces.ICanBeUsedByActions;
+import intefaces.CanBeUsedByActions;
 
 public class Tell extends Verb {
 
@@ -8,7 +8,7 @@ public class Tell extends Verb {
         super(name);
     }
 
-    public String doSth(ICanBeUsedByActions obj) {
+    public String doSth(CanBeUsedByActions obj) {
         return this.getName() + " " + obj.toString();
     }
 

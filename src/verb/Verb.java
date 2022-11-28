@@ -1,16 +1,16 @@
 package verb;
 
-import intefaces.ICanBeUsedByActions;
+import intefaces.CanBeUsedByActions;
 import thing.Thing;
 
 import java.util.HashSet;
 import java.util.Objects;
 
-public abstract class Verb implements ICanBeUsedByActions {
+public abstract class Verb implements CanBeUsedByActions {
     private String name;
     private HashSet<Thing> addition= new HashSet<>();
 
-    public abstract String doSth(ICanBeUsedByActions obj);
+    public abstract String doSth(CanBeUsedByActions obj);
 
     public Verb() {
         name = "нет действия";

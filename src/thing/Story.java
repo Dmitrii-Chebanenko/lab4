@@ -1,12 +1,10 @@
 package thing;
 
-import intefaces.IPartOfStory;
-
 import java.util.Objects;
 
 public class Story extends Thing {
 
-    private IPartOfStory StoryAbout;
+    private Object StoryAbout;
     public Story() {
         super();
     }
@@ -15,14 +13,12 @@ public class Story extends Thing {
         super(name);
     }
 
-    public void setStoryThing(IPartOfStory thing) {
+    public void setStoryThing(Object thing) {
         this.StoryAbout = thing;
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Story story = (Story) o;
         return Objects.equals(StoryAbout, story.StoryAbout);

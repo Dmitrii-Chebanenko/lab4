@@ -3,7 +3,7 @@ package intefaces;
 import enums.DaysOfTheWeek;
 import enums.QuestionWord;
 
-public interface ICanAsk {
+public interface CanAsk {
     String getName();
     void ask(QuestionWord q, DaysOfTheWeek when);
 }

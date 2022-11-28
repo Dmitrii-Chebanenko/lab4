@@ -1,15 +1,14 @@
 package entity;
 
 import enums.Status;
-import intefaces.ICanBeUsedByActions;
-import intefaces.IPartOfStory;
+import intefaces.CanBeUsedByActions;
 import places.Place;
 import thing.Thing;
 
 import java.util.HashSet;
 import java.util.Objects;
 
-public abstract class Entity implements IPartOfStory, ICanBeUsedByActions {
+public abstract class Entity implements IPartOfStory, CanBeUsedByActions {
     private String name;
     private Place location;
 

@@ -2,7 +2,7 @@ package intefaces;
 
 import places.Place;
 
-public interface ICanRush {
+public interface CanRush {
     String getName();
     void rush(Place place);
 }
