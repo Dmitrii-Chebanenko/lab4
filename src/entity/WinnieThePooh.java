@@ -23,7 +23,7 @@ public class WinnieThePooh extends Entity implements ICanPublish, ICanAsk, ICanH
     }
 
     public void publish(Place place, ICanBeUsedByActions obj) {
-        System.out.println(Prepositions.всю + " " + place.getName() + " " + this.getName() + " издал " + obj.toString());
+        System.out.println(Prepositions.всю + " " + place.getName() + " " + this.getName() + " издал " + obj.superToString());
     }
 
     public void ask(QuestionWord q, DaysOfTheWeek when) {
@@ -33,12 +33,12 @@ public class WinnieThePooh extends Entity implements ICanPublish, ICanAsk, ICanH
     public void hear(ICanBeUsedByActions obj) {
         Story story = new Story ("историю");
         story.addStatus(Status.SAD);
-        System.out.println(this.getName() + " слушает " + obj.toString());
+        System.out.println(this.getName() + " слушает " + obj.superToString());
         eyes.expand();
     }
 
     public void hear(Entity sub, ICanBeUsedByActions obj) {
-        System.out.println(this.getName() + " и " + sub.getName() + " слушают " + obj.toString());
+        System.out.println(this.getName() + " и " + sub.getName() + " слушают " + obj.superToString());
     }
 
     private class Eyes extends Thing implements ICanExpand {
@@ -51,5 +51,4 @@ public class WinnieThePooh extends Entity implements ICanPublish, ICanAsk, ICanH
             System.out.println(getName() + " " + Status.getStatus(Status.EXPANDED));
         }
     }
-
 }

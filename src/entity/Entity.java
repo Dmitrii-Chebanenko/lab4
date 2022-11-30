@@ -15,7 +15,6 @@ public abstract class Entity implements IPartOfStory, ICanBeUsedByActions {
 
     private boolean isHeOwner = false;
     private HashSet<Status> status = new HashSet<>();
-    private HashSet<Thing> partOfEntities = new HashSet<>();
 
     public Entity(){
         name = "неизвестно";
@@ -45,9 +44,6 @@ public abstract class Entity implements IPartOfStory, ICanBeUsedByActions {
     public void addStatus(Status status){
         this.status.add(status);
     }
-    public void addPartOfEntities(Thing thing){
-        this.partOfEntities.add(thing);
-    }
 
     public void setLocation(Place location){
         this.location = location;
@@ -73,17 +69,21 @@ public abstract class Entity implements IPartOfStory, ICanBeUsedByActions {
         return this.isHeOwner;
     }
 
+    public String superToString(){
+        return getName() + "в " + getLocation();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Entity entity = (Entity) o;
-        return isHeOwner == entity.isHeOwner && Objects.equals(name, entity.name) && Objects.equals(location, entity.location) && Objects.equals(status, entity.status) && Objects.equals(partOfEntities, entity.partOfEntities);
+        return isHeOwner == entity.isHeOwner && Objects.equals(name, entity.name) && Objects.equals(location, entity.location) && Objects.equals(status, entity.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, location, isHeOwner, status, partOfEntities);
+        return Objects.hash(name, location, isHeOwner, status);
     }
 
     @Override

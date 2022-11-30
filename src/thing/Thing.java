@@ -46,6 +46,15 @@ public abstract class Thing  implements IPartOfStory, ICanBeUsedByActions {
         return status;
     }
 
+    public void equate(Thing thing) {
+        name = thing.getName();
+        status = thing.status;
+    }
+
+    public String superToString() {
+        return  getStatusToString() + " " + this.getName();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -61,6 +70,9 @@ public abstract class Thing  implements IPartOfStory, ICanBeUsedByActions {
 
     @Override
     public String toString() {
-        return  getStatusToString() + " " + this.getName();
+        return getClass().getName() +
+                "[name='" + name + '\'' +
+                ", status=" + status +
+                ']';
     }
 }

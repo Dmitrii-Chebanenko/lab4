@@ -19,11 +19,11 @@ public class Piglet extends Entity implements ICanHear {
     public void hear(ICanBeUsedByActions obj) {
         Story story = new Story ("историю");
         story.addStatus(Status.SAD);
-        System.out.println(this.getName() + " слушает " + obj.toString());
+        System.out.println(this.getName() + " слушает " + obj.superToString());
         eyes.expand();
     }
     public void hear(Entity sub,ICanBeUsedByActions obj) {
-        System.out.println(this.getName() + " и " + sub.getName() + " слушают " + obj.toString());
+        System.out.println(this.getName() + " и " + sub.getName() + " слушают " + obj.superToString());
     }
 
     private class Eyes extends Thing implements ICanExpand {

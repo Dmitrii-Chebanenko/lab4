@@ -10,6 +10,10 @@ import thing.Thing;
 import thing.Whoop;
 import verb.Tell;
 
+import java.util.HashSet;
+
+import static java.util.logging.Logger.global;
+
 //Они помчались по опушке вокруг рощи, и всю дорогу Пух издавал приветственные возгласы.
 // Не успел Винни-Пух спросить: "Почему по четвергам?"-- как Кристофер Робин начал рассказывать грустную историю пропавшего дома Иа.
 // Пух и Пятачок слушали, и глаза у них становились все больше и больше.
@@ -26,7 +30,6 @@ public class Main {
         they.rush(marge);
         whoop.addStatus(Status.WELCOMING);
         winnieThePooh.publish(road, whoop);
-
         //Не успел Винни-Пух спросить: "Почему по четвергам?"-- как Кристофер Робин начал рассказывать грустную историю пропавшего дома Иа.
         winnieThePooh.setName("Винни-Пух");
         winnieThePooh.ask(QuestionWord.WHY, DaysOfTheWeek.THURSDAY);
@@ -43,5 +46,8 @@ public class Main {
         winnieThePooh.setName("Пух");
         winnieThePooh.hear(story);
         piglet.hear(story);
+
+        //Станутсы
+        story.toString();
     }
 }

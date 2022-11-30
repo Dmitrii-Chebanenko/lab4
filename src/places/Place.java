@@ -42,6 +42,12 @@ public abstract class Place implements IPartOfStory, ICanBeUsedByActions {
         this.name = name;
     }
 
+    public String superToString() {
+        String result = status.toString();
+        result = result.substring(1, result.length() - 1);
+        return result + " "+ getName();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -57,6 +63,8 @@ public abstract class Place implements IPartOfStory, ICanBeUsedByActions {
 
     @Override
     public String toString() {
-        return getName();
+        return getClass().getName() +
+                "[name=" + name +
+                "status" + status + "]";
     }
 }

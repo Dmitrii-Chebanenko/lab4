@@ -32,6 +32,12 @@ public abstract class Verb implements ICanBeUsedByActions {
         this.name = name;
     }
 
+    public String superToString(){
+        String result = addition.toString();
+        result = result.substring(1, result.length() - 1);
+        return name + " " + result;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -43,5 +49,13 @@ public abstract class Verb implements ICanBeUsedByActions {
     @Override
     public int hashCode() {
         return Objects.hash(name, addition);
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getName() +
+                "name='" + name + '\'' +
+                ", addition=" + addition +
+                '}';
     }
 }

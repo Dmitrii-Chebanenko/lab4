@@ -9,7 +9,7 @@ public class Tell extends Verb {
     }
 
     public String doSth(ICanBeUsedByActions obj) {
-        return this.getName() + " " + obj.toString();
+        return this.getName() + " " + obj.superToString();
     }
 
 }

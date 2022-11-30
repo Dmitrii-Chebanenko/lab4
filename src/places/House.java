@@ -19,6 +19,13 @@ public class House extends Place {
 
     @Override
     public String toString() {
+        String result = super.toString();
+        result = result.substring(0, result.length() - 1);
+        return result + " " + this.owner;
+    }
+
+    @Override
+    public String superToString() {
         return getStatusToString() + " " + getName() + " " + owner.getName();
     }
 }
