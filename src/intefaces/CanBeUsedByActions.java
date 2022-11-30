@@ -1,7 +1,6 @@
 package intefaces;
 
-public interface IPartOfStory {
+public interface CanBeUsedByActions {
     String getName();
-
     String superToString();
 }

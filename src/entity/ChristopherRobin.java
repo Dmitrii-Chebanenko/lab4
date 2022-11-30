@@ -1,14 +1,11 @@
 package entity;
 
-import enums.Status;
-import intefaces.ICanBeUsedByActions;
-import intefaces.ICanExpand;
-import intefaces.ICanStartDoSomething;
+import intefaces.CanBeUsedByActions;
+import intefaces.CanStartDoSomething;
 import places.Place;
-import thing.Thing;
 import verb.Verb;
 
-public class ChristopherRobin extends Entity implements ICanStartDoSomething {
+public class ChristopherRobin extends Entity implements CanStartDoSomething {
     public ChristopherRobin(String name) {
         super(name);
     }
@@ -17,7 +14,7 @@ public class ChristopherRobin extends Entity implements ICanStartDoSomething {
         super(name, location);
     }
 
-    public void StartDoSomeThing(Verb obj, ICanBeUsedByActions thing) {
+    public void StartDoSomeThing(Verb obj, CanBeUsedByActions thing) {
         System.out.println(this.getName() + " начал " + obj.doSth(thing));
     }
 }

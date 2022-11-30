@@ -1,13 +1,13 @@
 package entity;
 
-import intefaces.ICanRush;
+import intefaces.CanRush;
 import places.Place;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
 
-public class They extends Entity implements ICanRush {
+public class They extends Entity implements CanRush {
     private ArrayList<Entity> people = new ArrayList<>();
 
     public They(String name,Entity ... people){

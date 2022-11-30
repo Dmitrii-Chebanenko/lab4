@@ -1,6 +1,6 @@
 package intefaces;
 
-public interface ICanExpand {
+public interface CanExpand {
     String getName();
 
     void expand();
