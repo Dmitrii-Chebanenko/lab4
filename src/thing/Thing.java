@@ -3,11 +3,12 @@ package thing;
 import enums.Status;
 import intefaces.CanBeUsedByActions;
 import intefaces.PartOfStory;
+import intefaces.Wordable;
 
 import java.util.HashSet;
 import java.util.Objects;
 
-public abstract class Thing  implements CanBeUsedByActions, PartOfStory {
+public abstract class Thing  implements CanBeUsedByActions, PartOfStory, Wordable {
     private String name;
 
     private HashSet<Status> status = new HashSet<>();

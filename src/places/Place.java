@@ -3,11 +3,13 @@ package places;
 import enums.Status;
 import intefaces.CanBeUsedByActions;
 import intefaces.PartOfStory;
+import intefaces.Wordable;
+import thing.Whoop;
 
 import java.util.HashSet;
 import java.util.Objects;
 
-public abstract class Place implements CanBeUsedByActions, PartOfStory {
+public abstract class Place implements CanBeUsedByActions, PartOfStory, Wordable {
     private String name;
 
     private HashSet<Status> status = new HashSet<>();

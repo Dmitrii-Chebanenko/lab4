@@ -1,11 +1,10 @@
 package entity;
 
 import intefaces.CanBeUsedByActions;
-import intefaces.CanStartDoSomething;
+import intefaces.StartTell;
 import places.Place;
-import verb.Verb;
 
-public class ChristopherRobin extends Entity implements CanStartDoSomething {
+public class ChristopherRobin extends Entity implements StartTell {
     public ChristopherRobin(String name) {
         super(name);
     }
@@ -14,7 +13,7 @@ public class ChristopherRobin extends Entity implements CanStartDoSomething {
         super(name, location);
     }
 
-    public void StartDoSomeThing(Verb obj, CanBeUsedByActions thing) {
-        System.out.println(this.getName() + " начал " + obj.doSth(thing));
+    public void StartTell(CanBeUsedByActions thing) {
+        System.out.println(this.getName() + " начал рассказывать " + thing.superToString());
     }
 }

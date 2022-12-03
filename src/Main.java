@@ -1,24 +1,26 @@
 import entity.*;
 import enums.DaysOfTheWeek;
 import enums.QuestionWord;
+import enums.Songs;
 import enums.Status;
 import places.Marge;
 import places.Road;
 import places.House;
-import thing.Story;
-import thing.Thing;
-import thing.Whoop;
-import verb.Tell;
+import thing.*;
 
-import java.util.HashSet;
-
-import static java.util.logging.Logger.global;
 
 //Они помчались по опушке вокруг рощи, и всю дорогу Пух издавал приветственные возгласы.
 // Не успел Винни-Пух спросить: "Почему по четвергам?"-- как Кристофер Робин начал рассказывать грустную историю пропавшего дома Иа.
 // Пух и Пятачок слушали, и глаза у них становились все больше и больше.
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+        //Слова песьни неожиданно изменились
+        Song song = new Song(Songs.NEVERGONNAGIVEMEUP);
+        Singer singer1 = new Singer("МОРГЕНХУЙ");
+        singer1.sing(song);
+        song.songChange(Songs.КАДИЛАК);
+        Thread.sleep(1000);
+        singer1.sing(song);
         // //Они помчались по опушке вокруг рощи, и всю дорогу Пух издавал приветственные возгласы.
         Marge marge = new Marge ("роща вокруг опушки");
         WinnieThePooh winnieThePooh = new WinnieThePooh ("Пух");
@@ -33,21 +35,16 @@ public class Main {
         //Не успел Винни-Пух спросить: "Почему по четвергам?"-- как Кристофер Робин начал рассказывать грустную историю пропавшего дома Иа.
         winnieThePooh.setName("Винни-Пух");
         winnieThePooh.ask(QuestionWord.WHY, DaysOfTheWeek.THURSDAY);
-        Tell tell = new Tell("рассказывать");
         Story story = new Story ("историю");
         story.addStatus(Status.SAD);
-        tell.addAddition(story);
         IA iA = new IA("Иа", true);
         House house = new House("дома", iA);
         house.addStatus(Status.MISSING);
         story.setStoryThing(house);
-        christopherRobin.StartDoSomeThing(tell , story);
+        christopherRobin.StartTell(story);
         // Пух и Пятачок слушали, и глаза у них становились все больше и больше.
         winnieThePooh.setName("Пух");
         winnieThePooh.hear(story);
         piglet.hear(story);
-
-        //Станутсы
-        story.toString();
     }
 }
