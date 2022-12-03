@@ -14,7 +14,7 @@ import thing.*;
 // Пух и Пятачок слушали, и глаза у них становились все больше и больше.
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        //Слова песьни неожиданно изменились
+        //Слова песни неожиданно изменились
         Song song = new Song(Songs.NEVERGONNAGIVEMEUP);
         Singer singer1 = new Singer("МОРГЕНХУЙ");
         singer1.sing(song);

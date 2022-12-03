@@ -201,8 +201,7 @@ public enum Songs {
                         "I'll find my way, find my way home, oh, oh, oh\n" +
                         "I'll find my way, find my way home, oh, oh, oh\n" +
                         "I'll find my way, find my way home, oh, oh, oh\n" +
-                        "\n" +
-                        "Читать на сайте: https://text-pesni.com/ipzj";
+                        "\n";
             };
         }
     public static String getPath(Songs song){
