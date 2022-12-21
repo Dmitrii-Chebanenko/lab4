@@ -5,7 +5,11 @@ public enum Status {
     SAD,
     MISSING,
     EXPANDED,
-    SUDDENLY;
+    SUDDENLY,
+    SHRINKED,
+    COMFORTABLE,
+    UNCOMFORTABLE,
+    ;
 
     public static  String getStatus(Status status) {
         return switch(status){
@@ -14,6 +18,9 @@ public enum Status {
             case MISSING -> "пропавшего";
             case EXPANDED -> "расширялись";
             case SUDDENLY -> "неожиданно";
+            case SHRINKED -> "сжимались";
+            case COMFORTABLE -> "удобный";
+            case UNCOMFORTABLE -> "некомфортный";
         };
     }
 }

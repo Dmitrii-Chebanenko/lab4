@@ -122,9 +122,8 @@ public class Sound implements AutoCloseable {
     }
 
     // Статический метод, для удобства
-    public static Sound playSound(String path) {
-        File f = new File(path);
-        Sound snd = new Sound(f);
+    public static Sound playSound(File file) {
+        Sound snd = new Sound(file);
         snd.play();
         return snd;
     }

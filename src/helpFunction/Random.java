@@ -1,4 +1,4 @@
-package thing;
+package helpFunction;
 
 public class Random {
     public static int getRandom(int max) {

@@ -1,14 +1,14 @@
 package entity;
 
 import enums.Status;
-import intefaces.CanBeUsedByActions;
+import intefaces.IsActionUseAble;
 import intefaces.PartOfStory;
 import places.Place;
 
 import java.util.HashSet;
 import java.util.Objects;
 
-public abstract class Entity implements CanBeUsedByActions, PartOfStory {
+public abstract class Entity implements IsActionUseAble, PartOfStory {
     private String name;
     private Place location;
 
@@ -66,6 +66,17 @@ public abstract class Entity implements CanBeUsedByActions, PartOfStory {
 
     public boolean getIsHeOwner(){
         return this.isHeOwner;
+    }
+
+    public String getStatusToString(){
+        String ans = "";
+        for (Status s : this.status){
+            ans += Status.getStatus(s);
+            ans+=", ";
+        }
+        if (!this.status.isEmpty())
+            ans = ans.substring(0, ans.length()-2);
+        return ans;
     }
 
     public String superToString(){

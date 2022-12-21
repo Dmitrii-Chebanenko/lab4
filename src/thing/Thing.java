@@ -1,13 +1,13 @@
 package thing;
 
 import enums.Status;
-import intefaces.CanBeUsedByActions;
+import intefaces.IsActionUseAble;
 import intefaces.PartOfStory;
 
 import java.util.HashSet;
 import java.util.Objects;
 
-public abstract class Thing  implements CanBeUsedByActions, PartOfStory {
+public abstract class Thing  implements IsActionUseAble, PartOfStory {
     private String name;
 
     private HashSet<Status> status = new HashSet<>();
@@ -26,7 +26,8 @@ public abstract class Thing  implements CanBeUsedByActions, PartOfStory {
             ans += Status.getStatus(s);
             ans+=", ";
         }
-        ans = ans.substring(0, ans.length()-2);
+        if (!this.status.isEmpty())
+            ans = ans.substring(0, ans.length()-2);
         return ans;
     }
 
@@ -34,17 +35,23 @@ public abstract class Thing  implements CanBeUsedByActions, PartOfStory {
         this.status.add(status);
     }
 
+    public void removeStatus(Status status){
+        this.status.remove(status);
+    }
+
     public void setName(String name) {
         this.name = name;
+    }
+
+    public HashSet<Status> getStatus() {
+        return status;
     }
 
     public String getName() {
         return name;
     }
 
-    public HashSet<Status> getStatus() {
-        return status;
-    }
+
 
     public void equate(Thing thing) {
         name = thing.getName();

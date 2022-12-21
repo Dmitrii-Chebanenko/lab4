@@ -1,13 +1,13 @@
 package places;
 
 import enums.Status;
-import intefaces.CanBeUsedByActions;
+import intefaces.IsActionUseAble;
 import intefaces.PartOfStory;
 
 import java.util.HashSet;
 import java.util.Objects;
 
-public abstract class Place implements CanBeUsedByActions, PartOfStory {
+public abstract class Place implements IsActionUseAble, PartOfStory {
     private String name;
 
     private HashSet<Status> status = new HashSet<>();
@@ -24,13 +24,22 @@ public abstract class Place implements CanBeUsedByActions, PartOfStory {
         this.status.add(status);
     }
 
+    public void removeStatus(Status status){
+        this.status.remove(status);
+    }
+
+    public HashSet<Status> getStatus() {
+        return status;
+    }
+
     public String getStatusToString(){
         String ans = "";
         for (Status s : this.status){
             ans += Status.getStatus(s);
             ans+=", ";
         }
-        ans = ans.substring(0, ans.length()-2);
+        if (!this.status.isEmpty())
+            ans = ans.substring(0, ans.length()-2);
         return ans;
     }
 
@@ -42,10 +51,8 @@ public abstract class Place implements CanBeUsedByActions, PartOfStory {
         this.name = name;
     }
 
-    public String superToString() {
-        String result = status.toString();
-        result = result.substring(1, result.length() - 1);
-        return result + " "+ getName();
+        public String superToString() {
+            return getStatusToString() + " " + getName();
     }
 
     @Override

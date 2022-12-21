@@ -10,8 +10,7 @@ public class Singer extends Entity implements Singable {
     }
     public void sing(Song song){
         System.out.println(getName() + " начал свое выступление!11!!11!!");
-        System.out.println(song.getWords());
-        Sound.playSound(song.getPath()).join();
+        Sound.playSound(song.getFile()).join();
         System.out.println(getName() + " замолчал");
     }
 }

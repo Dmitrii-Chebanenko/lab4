@@ -1,6 +1,6 @@
 package intefaces;
 
-public interface CanBeUsedByActions {
+public interface IsActionUseAble {
     String getName();
     String superToString();
 }
