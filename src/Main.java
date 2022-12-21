@@ -16,16 +16,30 @@ import java.io.File;
 // Не успел Винни-Пух спросить: "Почему по четвергам?"-- как Кристофер Робин начал рассказывать грустную историю пропавшего дома Иа.
 // Пух и Пятачок слушали, и глаза у них становились все больше и больше.
 public class Main {
-    public static void main(String[] args) throws InterruptedException, IncorrectSongException {
+    public static void main(String[] args) throws InterruptedException {
         //Слова песни неожиданно изменились
         File file1 = new File("./src/sounds/Rick_Astley_-_Never_Gonna_Give_You_Up_musmore.wav");
-        if (!file1.exists()) {
-            throw new IncorrectSongException("Файл не найден");
+        try{
+            if (!file1.exists()){
+                throw new IncorrectSongException("Файл не найден");
+            }
+        }catch (IncorrectSongException e){
+            System.out.println(e.getMessage());
+            file1 = new File("./src/sounds/Rick_Astley_-_Never_Gonna_Give_You_Up_musmore.wav");
         }
         Song song = new Song("Never gonna give you up", file1);
-        Singer singer1 = new Singer("МОРГЕНХУЙ");
+        Singer singer1 = new Singer("Певец");
         singer1.sing(song);
-        song.songChange("КАДИЛАК", new File("./src/sounds/morgenshtern-eldzhej-kadillak-mp3.wav"));
+        file1 = new File("src/sounds/morgenshtern-eldzhej-kadillak-mp3.wav");
+        try{
+            if (!file1.exists()){
+                throw new IncorrectSongException("Файл не найден");
+            }
+        }catch (IncorrectSongException e){
+            System.out.println(e.getMessage());
+            file1 = new File("src/sounds/morgenshtern-eldzhej-kadillak-mp3.wav");
+        }
+        song.songChange("КАДИЛАК",file1);
         Thread.sleep(1000);
         singer1.sing(song);
         //Они помчались по опушке вокруг рощи, и всю дорогу Пух издавал приветственные возгласы.

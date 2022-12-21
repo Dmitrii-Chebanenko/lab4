@@ -46,6 +46,7 @@ public class WinnieThePooh extends Entity implements PublishAble, AskAble, HearA
                     System.out.println(eyes.getName() + " остались неизменными");
                     break;
             }
+
         }
         else {
             System.out.println(this.getName() + " не слушает " + obj.superToString() + ". Ему все равно");
